@@ -23,5 +23,14 @@
         if($type === 'posts'){
             addPost($connect, $_POST);
         }
+        else if($method === 'PATCH'){
+            if($type === 'posts'){
+                if(isset($id)){
+                    $data = file_get_contents('php://input');
+                    $data = json_decode($data, true);
+                    updatePost($connect,$id,$data);
+                }
+            }
+        }
     }
 ?>
