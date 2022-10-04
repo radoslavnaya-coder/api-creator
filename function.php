@@ -30,7 +30,7 @@ function getPost($connect, $id){
 
 function addPost($connect, $data){
     mysqli_query($connect, "INSERT INTO `posts` (`id`, `title`, `body`) VALUES (NULL, '$title', '$body') ");
-    http_responce_code[201];
+    http_response_code(201);
     $title = $data['title'];
     $body = $data['body'];
     $res = [

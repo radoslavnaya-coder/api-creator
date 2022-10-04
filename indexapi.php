@@ -18,11 +18,12 @@
             getPosts($connect);
         }
     }
-        }
+}
     elseif($method === 'POST'){
         if($type === 'posts'){
             addPost($connect, $_POST);
         }
+    }
         else if($method === 'PATCH'){
             if($type === 'posts'){
                 if(isset($id)){
@@ -32,5 +33,4 @@
                 }
             }
         }
-    }
 ?>
