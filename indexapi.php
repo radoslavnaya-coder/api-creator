@@ -24,12 +24,19 @@
             addPost($connect, $_POST);
         }
     }
-        else if($method === 'PATCH'){
+        elseif($method === 'PATCH'){
             if($type === 'posts'){
                 if(isset($id)){
                     $data = file_get_contents('php://input');
                     $data = json_decode($data, true);
                     updatePost($connect,$id,$data);
+                }
+            }
+        }
+        elseif($method === 'DELETE'){
+            if($type === 'posts'){
+                if(isset($id)){
+                    deletePost($connect,$id);
                 }
             }
         }
